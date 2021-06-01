@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+ {% block title %}SignUp{% endblock title %} 
+{% block body %} 
+
+<style>
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+        
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+        
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+        
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <div class="text-center">
+    <main class="form-signin">
+        <form method="POST" action="/signup">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 fw-normal">Please Sign up</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Username">
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control" name="email" id="floatingInput" style="margin-top: 20px;" placeholder="Email Address">
+                <label for="floatingInput">Email Address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" name="password" id="floatingPassword" style="margin-top: 20px;" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" name="firstname" id="floatingPassword" style="margin-top: 20px;" placeholder="Enter First Name">
+                <label for="floatingInput">First Name</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" name="lastname" id="floatingPassword" style="margin-top: 20px;" placeholder="Enter Last Name">
+                <label for="floatingInput">Last Name</label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" style="margin-top: 20px;" type="submit">Sign up</button>
+
+        </form>
+    </main>
+    </div>
+
+    <!-- Live CoronaVirus Widget -->
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-a14da8ea-7d02-4dcd-8500-f9337089f17a"></div>
+    
+    {% endblock body %}

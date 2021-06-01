@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}Services{% endblock title %} {% block body %} {% if success %}
+
+
+<script>
+    swal("Success!", "The Appointment has been booked!", "success");
+</script>
+
+{% endif %}
+<br>
+
+<table class="table table-bordered">
+    {%csrf_token%}
+
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Appointment Date</th>
+            <th scope="col">Discription</th>
+            <th scope="col">Appointment Time</th>
+            <th scope="col">Status</th>
+            <th scope="col">Completed</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for service in services %}
+
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{service.appointmentDate}}</td>
+            <td>{{service.discription}}</td>
+            <td>{{service.time}}</td>
+            <td>{{service.status}}</td>
+            <td>{{service.completed}}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock body %}
