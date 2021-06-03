@@ -38,8 +38,8 @@ class Service(models.Model):
 
         else:
             # Make sure less secure app is ON on the google accounnt
-            message = "Hello "+self.user.get_full_name()+", We are pleased to inform you that the Bike service for "+self.appointmentType+" has been completed and it's Ready for Pickup."
-            send_mail('Bike Service Completed', message, 'logickiddie@gmail.com', [self.user.email], fail_silently=False)
+            message = "Dear "+self.user.get_full_name()+", Thank you for chosing DoctorZ, we hope you like our services. \n Have a good Health \n DoctorZ"
+            send_mail('DoctorZ Appointment Completed', message, 'logickiddie@gmail.com', [self.user.email], fail_silently=False)
             super(Service, self).save(*args, **kwargs)
 
     def __str__(self):

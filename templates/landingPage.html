@@ -1,6 +1,11 @@
 {% extends 'base.html' %} {% block title %}Home{% endblock title %} {% block body %}
 
 <style>
+    .banner {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
     .crouselImg {
         width: 80vw;
         height: 40vw;
@@ -12,13 +17,139 @@
         margin-right: auto;
         margin-left: auto;
     }
+    
+    .carousel {
+        margin-top: 30px;
+    }
+    
+    .carousel-inner {
+        height: 150px;
+    }
+    
+    .carousel-caption {
+        color: black;
+        top: 50%;
+    }
+    
+    .carouselHeading {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bolder;
+    }
+    
+    .featurette-divider {
+        margin: 5rem 0;
+        /* Space out the Bootstrap <hr> more */
+    }
+    /* Thin out the marketing headings */
+    
+    .featurette-heading {
+        font-weight: 300;
+        line-height: 1;
+        /* rtl:remove */
+        letter-spacing: -.05rem;
+    }
+    
+    .service {
+        width: 100vh;
+        height: 60vh;
+    }
+    
+    .servicehead {
+        padding-top: 80px;
+        padding-bottom: 50px;
+    }
+    
+    .row {
+        justify-content: space-evenly;
+    }
+    
+    .maxWidthSet {
+        max-width: 100%;
+    }
+    /* RESPONSIVE CSS
+-------------------------------------------------- */
+    
+    @media (min-width: 40em) {
+        .featurette-heading {
+            font-size: 50px;
+        }
+    }
+    
+    @media (min-width: 62em) {
+        .featurette-heading {
+            margin-top: 7rem;
+        }
+    }
 </style>
 <br>
 
-<img src="/static/banner.jpg" class="img-responsive img-fluid" alt="">
+<img src="/static/ban.jpg" class="img-responsive img-fluid rounded banner" alt="">
+
+
+<div class="carouselHeading servicehead">Services</div>
+
+<div class="maxWidthSet row mb-2 justify-content-md-center">
+    <div class="col col-md-4">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">Featured post</h3>
+                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img class="service" src="/static/doc7.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col col-md-4">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">Post title</h3>
+                <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img class="service" src="/static/dit.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+
+<div class="maxWidthSet row mb-2 justify-content-md-center">
+    <div class="col col-md-4">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">Featured post</h3>
+                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img class="service" src="/static/doc7.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col col-md-4">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">Post title</h3>
+                <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img class="service" src="/static/dit.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <!-- Crousel -->
 <!-- https://source.unsplash.com/1600x600/?corona -->
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -51,8 +182,47 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-</div><br>
+</div><br> -->
 
+<br><br><br><br>
+
+<div class="carouselHeading">What our users have to say</div>
+
+<!-- carousel text -->
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="carousel-caption">
+                <h3>Amit Kumar</h3>
+                <p>Very helpful. Far easier than doing same things on computer. Allows quick and easy search with speedy booking. Even maintains history of doctors visited.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption">
+                <h3>Ayaz Alam</h3>
+                <p>Very easy to book,maintain history. Hassle free from older versions of booking appointment via telephone.. Thanks DoctorZ for making it simple.
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption">
+                <h3>Josh Kenau</h3>
+                <p>Very good website. Well thought out about booking/rescheduling/canceling an appointment. Also, Doctor's feedback mechanism is good and describes all the basics in a good way
+                </p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<br><br>
 
 <!-- Live CoronaVirus Widget -->
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>

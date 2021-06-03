@@ -1,14 +1,43 @@
 {% extends "base.html" %} {% block title %}Dashboard{% endblock title %} {% block body %}
 
-<div class="row">
+<style>
+    .maxWidthSet {
+        max-width: 100%;
+        justify-content: center;
+        padding-left: 150px;
+        /* padding-top: 10px; */
+    }
+    
+    .leftWidth {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+</style>
+
+<div class="row maxWidthSet">
     {% for service in services %}
-    <div class="column">
-        <div class="card" style="width: 18rem;">
-            <img src="/static/doc7.png" class="card-img-top" alt="images">
+    <div class="col col-4 leftWidth">
+        <div class="card col-md-15" style="width: 18rem;">
+            <!-- <img src="/static/doc7.png" class="card-img-top" alt="images"> -->
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/static/dit.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/doc7.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/doc6.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
             <div class="card-body">
                 <h5 class="card-title">{{service.name}}</h5>
                 <p class="card-text">{{service.description}}</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Schedule</button>
+                {% if user.is_authenticated %}
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Schedule</button> {% else %}
+                <b>Pleas Login to Schedule an Appointment</b> {% endif %}
             </div>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -19,7 +48,7 @@
 
                         </div>
                         <div class="modal-body">
-                            <form action="service" method="POST">
+                            <form action="booked-sessions" method="POST">
                                 {% csrf_token %} {% comment %} <input type="hidden" name="stype" value={{service.appointmentType}}> {% endcomment %}
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Discription:</label>
@@ -32,7 +61,7 @@
                                 <div class="form-group">
                                     <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd">
                                         <label for="example-time-input" class="col-2 col-form-label">Date</label>
-                                        <input type="text" name="appointmentDate" placeholder="Pick a date for Appointment" class="form-control">
+                                        <input type="date" name="appointmentDate" placeholder="Pick a date for Appointment" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">

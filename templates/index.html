@@ -1,10 +1,47 @@
-{% extends 'base.html' %}
- {% block title %}Dashboard{% endblock title %} 
- {% block body %}
+{% extends 'base.html' %} {% block title %}Home{% endblock title %} {% block body %}
 
 
 
-    welcome {{request.user}}
-    <p>You are very lucky to visit this site and now onwards you are gonna be the members of the Secret Society</p>
-   
-{{% endblock body %}}
+<table class="table table-bordered">
+    {%csrf_token%}
+
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Country</th>
+            <th scope="col">CountryCode</th>
+            <th scope="col">Cases</th>
+            <th scope="col">Status</th>
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for i in response %}
+
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{i.Country}}</td>
+            <td>{{i.CountryCode}}</td>
+            <td>{{i.Cases}}</td>
+            <td>{{i.Status}}</td>
+            <td>{{i.Date}}</td>
+        </tr>
+        {% endfor %}
+        <!-- {% for i in response|slice:"479:-1" reversed%}
+
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{i.Country}}</td>
+            <td>{{i.CountryCode}}</td>
+            <td>{{i.Cases}}</td>
+            <td>{{i.Status}}</td>
+            <td>{{i.Date}}</td>
+        </tr>
+        {% endfor %} -->
+
+    </tbody>
+</table>
+
+
+{% endblock body %}
