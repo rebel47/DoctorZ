@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from .models import Servicetype, Service
 import requests
+from covid import Covid
+import json
 
 
 # Create your views here.
@@ -18,7 +20,12 @@ def profile(request):
     return render(request, 'profile.html')
     
 def covid(request):
-    response=requests.get('https://api.covid19india.org/v4/min/data-all.min.json')
+    response=requests.get('https://api.covid19api.com/total/dayone/country/india').json()
+    # resp = response.json()
+    # covid = Covid()
+    # response = covid.get_status_by_country_name("india")
+    # response = str(response)
+    # response = json.dumps(response)
     return render(request, 'index.html', {'response':response})
 
 def service(request):
