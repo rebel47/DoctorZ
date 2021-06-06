@@ -93,7 +93,7 @@
     <div class="col col-md-4">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">Featured post</h3>
+                <h3 class="mb-0">Corona</h3>
                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             </div>
             <div class="col-auto d-none d-lg-block">
@@ -106,11 +106,11 @@
     <div class="col col-md-4">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">Post title</h3>
+                <h3 class="mb-0">Diagnostic Tests</h3>
                 <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             </div>
             <div class="col-auto d-none d-lg-block">
-                <img class="service" src="/static/dit.jpg" alt="">
+                <img class="service" src="/static/7.jpg" alt="">
             </div>
         </div>
     </div>
@@ -121,11 +121,11 @@
     <div class="col col-md-4">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">Featured post</h3>
+                <h3 class="mb-0">Family Checkup</h3>
                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             </div>
             <div class="col-auto d-none d-lg-block">
-                <img class="service" src="/static/doc7.png" alt="">
+                <img class="service" src="/static/doc3.jpg" alt="">
             </div>
         </div>
     </div>
@@ -134,11 +134,38 @@
     <div class="col col-md-4">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">Post title</h3>
+                <h3 class="mb-0">Fitness Wellness</h3>
                 <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
             </div>
             <div class="col-auto d-none d-lg-block">
-                <img class="service" src="/static/dit.jpg" alt="">
+                <img class="service" src="/static/doc5.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="maxWidthSet row mb-2 justify-content-md-center">
+    <div class="col col-md-4">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">Meditation</h3>
+                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img class="service" src="/static/doc1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col col-md-4">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">Dentist</h3>
+                <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img class="service" src="/static/dentist.jpg" alt="">
             </div>
         </div>
     </div>
@@ -222,10 +249,48 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<br><br>
+
+
+<div class="carouselHeading servicehead">Live Corona Case</div>
+
+<marquee behavior="scroll" direction="left">
+    <table class=" form table table-bordered">
+        {%csrf_token%}
+
+        <thead>
+            <tr>
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">Country</th>
+                <th scope="col">Total Confirmed</th>
+                <th scope="col">Death</th>
+                <th scope="col">Recovered</th>
+                <th scope="col">Active</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for mein in response|slice:"490:-1" reversed %}
+
+            <tr>
+                <!-- <th scope="row">{{forloop.counter}}</th> -->
+                <td>{{mein.Country}}</td>
+                <td>{{mein.Confirmed}}</td>
+                <td>{{mein.Deaths}}</td>
+                <td>{{mein.Recovered}}</td>
+                <td>{{mein.Active}}</td>
+                <td>{{mein.Date}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</marquee>
+<br><br><br>
 
 <!-- Live CoronaVirus Widget -->
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-a14da8ea-7d02-4dcd-8500-f9337089f17a"></div>
+<!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script> -->
+<!-- <div class="elfsight-app-a14da8ea-7d02-4dcd-8500-f9337089f17a"></div> -->
 
 {% endblock body %}

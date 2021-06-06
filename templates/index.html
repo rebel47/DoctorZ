@@ -1,38 +1,89 @@
 {% extends 'base.html' %} {% block title %}Home{% endblock title %} {% block body %}
 
 
+<style>
+    .carouselHeading {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bolder;
+    }
+    
+    .servicehead {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    
+    .imgWidth {
+        max-width: 100%;
+        padding-left: 30px;
+    }
+</style>
+<div class="carouselHeading servicehead">Live Covid-19 Case</div>
 
-<table class="table table-bordered">
-    {%csrf_token%}
+<div class="form-control">
+    <table class="table table-bordered">
+        {%csrf_token%}
 
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Country</th>
-            <th scope="col">Total Confirmed</th>
-            <th scope="col">Death</th>
-            <th scope="col">Recovered</th>
-            <th scope="col">Active</th>
-            <th scope="col">Date</th>
-        </tr>
-    </thead>
-    <tbody>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Country</th>
+                <th scope="col">Total Confirmed</th>
+                <th scope="col">Death</th>
+                <th scope="col">Recovered</th>
+                <th scope="col">Active</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
 
-        {% for i in response|slice:"481:-1" reversed %}
+            {% for i in response|slice:"486:-1" reversed %}
 
-        <tr>
-            <th scope="row">{{forloop.counter}}</th>
-            <td>{{i.Country}}</td>
-            <td>{{i.Confirmed}}</td>
-            <td>{{i.Deaths}}</td>
-            <td>{{i.Recovered}}</td>
-            <td>{{i.Active}}</td>
-            <td>{{i.Date}}</td>
-        </tr>
-        {% endfor %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{i.Country}}</td>
+                <td>{{i.Confirmed}}</td>
+                <td>{{i.Deaths}}</td>
+                <td>{{i.Recovered}}</td>
+                <td>{{i.Active}}</td>
+                <td>{{i.Date}}</td>
+            </tr>
+            {% endfor %}
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
+
+<br><br><br>
+
+<div class="carouselHeading servicehead">Covid-19 Precautions</div>
+<div class="row text-center imgWidth">
+    <img src="/static/blue-1.png" class="img-fluid rounded col col-6" alt="">
+    <img src="/static/blue-2.png" class="img-fluid rounded col col-6" alt="">
+</div><br><br>
+<div class="row text-center imgWidth">
+
+    <img src="/static/blue-3.png" class="img-fluid rounded col col-6" alt="">
+    <img src="/static/blue-4.png" class="img-fluid rounded col col-6" alt="">
+</div>
+
+<br><br><br>
+<div class="carouselHeading servicehead">Covid-19 Symptoms</div>
+<div class="row text-center">
+    <div class="col-3"></div>
+    <img src="/static/covidsymp.png" class="img-fluid rounded col-6" alt="">
+    <div class="col-3"></div>
+</div>
+<br><br><br>
+<div class="carouselHeading servicehead">Covid-19 Home Care</div>
+<div class="row text-center imgWidth">
+    <img src="/static/homecare1.png" class="img-fluid rounded col-4" alt="">
+    <img src="/static/homecare2.png" class="img-fluid rounded col-4" alt="">
+    <img src="/static/homecare3.png" class="img-fluid rounded col-4" alt="">
+</div>
+
+
+
 
 
 {% endblock body %}

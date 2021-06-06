@@ -1,21 +1,30 @@
 {% extends "base.html" %} {% block title %}Profile{% endblock title %} {% block body %}
 
-<table class="table table-bordered table-light">
-    <tr>
-        <th>First Name</th>
-        <td>{{request.user.first_name}}</td>
-    </tr>
-    <tr>
-        <th>Last Name</th>
-        <td>{{request.user.last_name}}</td>
-    </tr>
-    <tr>
-        <th>User Name</th>
-        <td>{{request.user}}</td>
-    </tr>
-    <tr>
-        <th>Email</th>
-        <td>{{request.user.email}}</td>
-    </tr>
-</table>
-<button onclick="location.href = 'members/edit_profile'" class="btn btn-primary">Edit</button>{% endblock body %}
+<style>
+    .bottomSpace {
+        padding-bottom: 365px;
+    }
+</style>
+
+<div class="form-control bottomSpace">
+    <table class="table table-bordered table-light">
+        <tr>
+            <th>First Name</th>
+            <td>{{request.user.first_name}}</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>{{request.user.last_name}}</td>
+        </tr>
+        <tr>
+            <th>User Name</th>
+            <td>{{request.user}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{request.user.email}}</td>
+        </tr>
+    </table>
+    <button onclick="location.href = 'members/edit_profile'" class="btn btn-primary">Edit</button>
+</div>
+{% endblock body %}

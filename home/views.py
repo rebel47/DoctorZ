@@ -9,7 +9,8 @@ import json
 
 # Create your views here.
 def index(request):
-    return render(request, 'landingPage.html')
+    response=requests.get('https://api.covid19api.com/total/dayone/country/india').json()
+    return render(request, 'landingPage.html', {'response':response})
 
 def dashboard(request):
     if request.method == 'GET':

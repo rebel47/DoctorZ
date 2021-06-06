@@ -80,25 +80,31 @@
               Services
             </a>
                         <ul class="dropdown-menu text-white fw-bold" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="book-appointment">Corona</a></li>
+                            <li><a class="dropdown-item" href="{% url 'book-appointment' %}">Corona</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="book-appointment">Diagnostic Tests</a></li>
+                            <li><a class="dropdown-item" href="{% url 'book-appointment' %}">Diagnostic Tests</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="book-appointment">Family Checkup</a></li>
+                            <li><a class="dropdown-item" href="{% url 'book-appointment' %}">Family Checkup</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="book-appointment">Fitness Wellness</a></li>
+                            <li><a class="dropdown-item" href="{% url 'book-appointment' %}">Fitness Wellness</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'book-appointment' %}">Meditation</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'book-appointment' %}">Dentist</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" aria-current="page" href="covid-19">
-                            <COVID-19>COVID-19</COVID-19>
-                        </a>
+                        <a class="nav-link text-white fw-bold" aria-current="page" href="{% url 'covid-19' %}">COVID-19</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -109,11 +115,11 @@
               Dashboard
             </a>
                         <ul class="dropdown-menu text-white fw-bold" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="profile">Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="booked-sessions">Booked Session</a></li>
+                            <li><a class="dropdown-item" href="{% url 'booked-sessions' %}">Booked Session</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
