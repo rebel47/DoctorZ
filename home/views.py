@@ -1,8 +1,11 @@
 from django.http import response
 from django.shortcuts import render
 from django.core.mail import send_mail
+from requests import sessions
+from requests.sessions import session
 from .models import Servicetype, Service
 import requests
+from datetime import date
 from covid import Covid
 import json
 
@@ -19,14 +22,49 @@ def dashboard(request):
 
 def profile(request):
     return render(request, 'profile.html')
+
+
+def vaccine(request):
+    # initial={
+    #     'pincode':"110046"
+    # }
+    try:
+        today = date.today()
+        d1 = today.strftime("%d-%m-%Y")
+        
+        pincode = request.GET.get('pincode')
+        pincode = str(pincode)
+        # pincode = '110065'
+        baseurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={}&date={}'.format(pincode,d1)
+        
+        # pinURL = baseurl + pincodeU + '&date='
+        # apiURL = pinURL + d1
+        vaccine = requests.get(baseurl)
+        data = vaccine.json()
+        vaccinedata = data["sessions"]
+        return render(request, 'vaccine_data.html', {'vaccinedata':vaccinedata})
+
+    except:
+        return render(request, 'vaccine_data.html')
+
+# def vaccineBook(request):
+#     today = date.today()
+#     d1 = today.strftime("%d-%m-%Y")
+#     pincodeU = '110046'
+#     baseurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={}&date={}'.format(pincodeU,d1)
+#     # pincode = request.POST.get('pincode')
+#     # pincodeU = str(pincode)
+#     # pinURL = baseurl + pincodeU + '&date='
+#     # apiURL = pinURL + d1
+#     vaccine = requests.get(baseurl)
+#     # print(vaccinedate)
+#     data = vaccine.json()
+#     vaccinedata = data["sessions"]
+#     # vaccinedata = data.values()
+#     return render(request, 'vaccine_data.html',{'vaccinedata':vaccinedata})
     
 def covid(request):
     response=requests.get('https://api.covid19api.com/total/dayone/country/india').json()
-    # resp = response.json()
-    # covid = Covid()
-    # response = covid.get_status_by_country_name("india")
-    # response = str(response)
-    # response = json.dumps(response)
     return render(request, 'index.html', {'response':response})
 
 def service(request):
@@ -54,11 +92,11 @@ def service(request):
         serviceupdate.name = name
         serviceupdate.save()
 
-        message = "Dear, "+request.user.get_full_name()+"\n Thank you for chosing DoctorZ, \n We are pleased to inform you that your Appointment has been scheduled on "+str(appointmentDate)+". \n DoctorZ"
+        message = "Dear, "+request.user.get_full_name()+"\n Thank you for chosing DoctorZ, \n We are pleased to inform you that your Appointment has been scheduled on "+str(appointmentDate)+" at "+ str(time)+".\n Your Description: "+ discription +" \n DoctorZ"
 
         send_mail('Doctorz Appointment Scheduled', message, 'logickiddie@gmail.com', [request.user.email], fail_silently=False)
 
-        ownermessage = "A new DoctorZ appointment request has been booked by "+request.user.get_full_name()+" for  scheduled to be delivered on "+str(appointmentDate)
+        ownermessage = "A new DoctorZ appointment request has been booked by "+request.user.get_full_name()+" and scheduled to be delivered on "+str(appointmentDate)+" at "+ str(time)+".\n Patient Discription:"+ discription
         send_mail('New Doctorz Appointment Booking', ownermessage, 'logickiddie@gmail.com', ['logickiddie@gmail.com'], fail_silently=False)
 
 

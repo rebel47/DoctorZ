@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock title %} {% block body %}
+
+
+<div>
+    <div class="form-control">
+        <form method="GET">
+            <label for="pincode">Enter Pincode</label>
+            <input type="text" name="pincode">
+            <button type="submit">Submit</button>
+        </form>
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Center ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Fee Type</th>
+                    <th scope="col">Vaccine</th>
+                    <th scope="col">Age limit</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for i in vaccinedata %}
+
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{i.center_id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.fee_type}}</td>
+                    <td>{{i.vaccine}}</td>
+                    <td>{{i.min_age_limit}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<br><br><br> {% endblock body %}

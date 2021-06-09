@@ -106,6 +106,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-white fw-bold" aria-current="page" href="{% url 'covid-19' %}">COVID-19</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" aria-current="page" href="vaccine">Vaccine</a>
+                    </li>
                 </ul>
                 <form class="d-flex">
                     {% if user.is_authenticated %} {% if request.path == "/book-appointment"%}

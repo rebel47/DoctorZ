@@ -9,5 +9,6 @@ urlpatterns = [
     path('profile',views.profile, name="profile"),
     path('booked-sessions',views.service, name="booked-sessions"),
     path('covid-19',views.covid, name="covid-19"),
+    path('vaccine',views.vaccine, name="vaccine"),
    
 ]

@@ -18,7 +18,9 @@
         padding-left: 30px;
     }
 </style>
-<div class="carouselHeading servicehead">Live Covid-19 Case</div>
+
+
+<div class="carouselHeading servicehead">Live Covid-19 Case <small>(India)</small></div>
 
 <div class="form-control">
     <table class="table table-bordered">
@@ -27,26 +29,26 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Country</th>
+                <!-- <th scope="col">Country</th> -->
+                <th scope="col">Date</th>
                 <th scope="col">Total Confirmed</th>
                 <th scope="col">Death</th>
                 <th scope="col">Recovered</th>
                 <th scope="col">Active</th>
-                <th scope="col">Date</th>
             </tr>
         </thead>
         <tbody>
 
-            {% for i in response|slice:"486:-1" reversed %}
+            {% for i in response|slice:"485:-1" reversed %}
 
             <tr>
                 <th scope="row">{{forloop.counter}}</th>
-                <td>{{i.Country}}</td>
+                <!-- <td>{{i.Country}}</td> -->
+                <td>{{i.Date}}</td>
                 <td>{{i.Confirmed}}</td>
                 <td>{{i.Deaths}}</td>
                 <td>{{i.Recovered}}</td>
                 <td>{{i.Active}}</td>
-                <td>{{i.Date}}</td>
             </tr>
             {% endfor %}
 
@@ -69,7 +71,7 @@
 
 <br><br><br>
 <div class="carouselHeading servicehead">Covid-19 Symptoms</div>
-<div class="row text-center">
+<div class="row text-center imgWidth">
     <div class="col-3"></div>
     <img src="/static/covidsymp.png" class="img-fluid rounded col-6" alt="">
     <div class="col-3"></div>
@@ -82,8 +84,4 @@
     <img src="/static/homecare3.png" class="img-fluid rounded col-4" alt="">
 </div>
 
-
-
-
-
-{% endblock body %}
+<br><br><br> {% endblock body %}
