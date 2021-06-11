@@ -1,13 +1,18 @@
 {% extends 'base.html' %} {% block title %}Home{% endblock title %} {% block body %}
 
-
+<style>
+    .formy {
+        padding-top: 20px;
+    }
+</style>
 <div>
-    <div class="form-control">
+    <div class="form-control formy">
         <form method="GET">
-            <label for="pincode">Enter Pincode</label>
-            <input type="text" name="pincode">
-            <button type="submit">Submit</button>
+            <label for="pincode" style="margin: 5px 0px 5px 0px;">Enter Pincode: </label>
+            <input class="" type="text" name="pincode">
+            <button class="btn btn-primary" type="submit">Submit</button>
         </form>
+        <br><br>
         <table class="table table-bordered">
 
             <thead>
@@ -18,6 +23,7 @@
                     <th scope="col">Address</th>
                     <th scope="col">Fee Type</th>
                     <th scope="col">Vaccine</th>
+                    <th scope="col">Available Capacity</th>
                     <th scope="col">Age limit</th>
                 </tr>
             </thead>
@@ -32,6 +38,7 @@
                     <td>{{i.address}}</td>
                     <td>{{i.fee_type}}</td>
                     <td>{{i.vaccine}}</td>
+                    <td>{{i.available_capacity}}</td>
                     <td>{{i.min_age_limit}}</td>
                 </tr>
                 {% endfor %}
