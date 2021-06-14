@@ -24,35 +24,27 @@ def profile(request):
 
 
 def vaccine(request):
-    today = date.today()
-    d1 = today.strftime("%d-%m-%Y")
-    pincode = '110065' 
-    baseurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={}&date={}'.format(pincode,d1)
-    vaccine = requests.get(baseurl)
-    data = vaccine.json()
-    vaccinedata = data["sessions"]
-    return render(request, 'vaccine_data.html', {'vaccinedata':vaccinedata})
     # initial={
     #     'pincode':"110046"
     # }
-#     try:
-#         today = date.today()
-#         d1 = today.strftime("%d-%m-%Y")
+    try:
+        today = date.today()
+        d1 = today.strftime("%d-%m-%Y")
         
-# #         pincode = request.GET.get('pincode')
-# #         pincode = str(pincode)
-#         pincode = '110065'
-#         baseurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={}&date={}'.format(pincode,d1)
+#         pincode = request.GET.get('pincode')
+#         pincode = str(pincode)
+        pincode = '110065'
+        baseurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={}&date={}'.format(pincode,d1)
         
-#         # pinURL = baseurl + pincodeU + '&date='
-#         # apiURL = pinURL + d1
-#         vaccine = requests.get(baseurl)
-#         data = vaccine.json()
-#         vaccinedata = data["sessions"]
-#         return render(request, 'vaccine_data.html', {'vaccinedata':vaccinedata})
+        # pinURL = baseurl + pincodeU + '&date='
+        # apiURL = pinURL + d1
+        vaccine = requests.get(baseurl)
+        data = vaccine.json()
+        vaccinedata = data["sessions"]
+        return render(request, 'vaccine_data.html', {'vaccinedata':vaccinedata})
 
-#     except:
-#         return render(request, 'vaccine_data.html')
+    except:
+        return render(request, 'vaccine_data.html')
 
 # def vaccineBook(request):
 #     today = date.today()
