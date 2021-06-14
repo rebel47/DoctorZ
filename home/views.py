@@ -6,7 +6,6 @@ from requests.sessions import session
 from .models import Servicetype, Service
 import requests
 from datetime import date
-from covid import Covid
 import json
 
 
