@@ -22,14 +22,16 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'home.apps.HomeConfig',
-    'members.apps.MembersConfig',
+#     'home.apps.HomeConfig',
+#     'members.apps.MembersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home',
+    'members',
 ]
 
 MIDDLEWARE = [
@@ -115,17 +117,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-   ('doctorz', os.path.join(BASE_DIR, 'doctorz', 'static')),
-)
-STATICFILES_FINDERS = (
-  'django.contrib.staticfiles.finders.FileSystemFinder',
-  'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = (
+#    ('doctorz', os.path.join(BASE_DIR, 'doctorz', 'static')),
+# )
+# STATICFILES_FINDERS = (
+#   'django.contrib.staticfiles.finders.FileSystemFinder',
+#   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# )
 # # TEMPLATES_ROOT = os.path.join(BASE_DIR, 'templates')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
