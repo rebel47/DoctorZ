@@ -122,11 +122,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = (
 #    ('doctorz', os.path.join(BASE_DIR, 'doctorz', 'static')),
 # )
-STATICFILES_FINDERS = (
-  'django.contrib.staticfiles.finders.FileSystemFinder',
-  'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
-# TEMPLATES_ROOT = os.path.join(BASE_DIR, 'templates')
+# STATICFILES_FINDERS = (
+#   'django.contrib.staticfiles.finders.FileSystemFinder',
+#   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# )
+# # TEMPLATES_ROOT = os.path.join(BASE_DIR, 'templates')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
