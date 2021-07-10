@@ -128,7 +128,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # )
 # TEMPLATES_ROOT = os.path.join(BASE_DIR, 'templates')
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
