@@ -28,14 +28,14 @@ def vaccine(request):
     #     'pincode':"110046"
     # }
     try:
-#         today = date.today()
-#         d1 = today.strftime("%d-%m-%Y")
+        today = date.today()
+        d1 = today.strftime("%d-%m-%Y")
         
-#         pincode = request.GET.get('pincode')
-#         pincode = str(pincode)
+        pincode = request.GET.get('pincode')
+        pincode = str(pincode)
         # pincode = '110065'
-        baseurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=110019&date=11-07-2021'
-#         baseurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={}&date={}'.format(pincode,d1)
+#         baseurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=110019&date=11-07-2021'
+        baseurl = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={}&date={}'.format(pincode,d1)
         
         # pinURL = baseurl + pincodeU + '&date='
         # apiURL = pinURL + d1
