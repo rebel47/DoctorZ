@@ -12,6 +12,15 @@ import json
 # Create your views here.
 def index(request):
     response=requests.get('https://api.covid19api.com/total/dayone/country/india').json()
+    # url = "https://corona-virus-world-and-india-data.p.rapidapi.com/api_india_timeline"
+
+    # headers = {
+    #     'x-rapidapi-key': "3b73f69c98msh63f861f599d3f0fp18a3d6jsn6262635c444f",
+    #     'x-rapidapi-host': "corona-virus-world-and-india-data.p.rapidapi.com"
+    #      }
+
+    # response = requests.request("GET", url, headers=headers).json()
+
     return render(request, 'landingPage.html', {'response':response})
 
 def dashboard(request):
@@ -24,9 +33,6 @@ def profile(request):
 
 
 def vaccine(request):
-    # initial={
-    #     'pincode':"110046"
-    # }
     try:
         today = date.today()
         d1 = today.strftime("%d-%m-%Y")
@@ -64,6 +70,14 @@ def vaccine(request):
     
 def covid(request):
     response=requests.get('https://api.covid19api.com/total/dayone/country/india').json()
+    # url = "https://corona-virus-world-and-india-data.p.rapidapi.com/api_india_timeline"
+
+    # headers = {
+    #     'x-rapidapi-key': "3b73f69c98msh63f861f599d3f0fp18a3d6jsn6262635c444f",
+    #     'x-rapidapi-host': "corona-virus-world-and-india-data.p.rapidapi.com"
+    #      }
+
+    # respon = requests.request("GET", url, headers=headers).json()
     return render(request, 'index.html', {'response':response})
 
 def service(request):

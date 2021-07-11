@@ -39,7 +39,7 @@
         </thead>
         <tbody>
 
-            {% for i in response|slice:"485:-1" reversed %}
+            {% for i in response|slice:"515:-1" reversed %}
 
             <tr>
                 <th scope="row">{{forloop.counter}}</th>
@@ -51,6 +51,33 @@
                 <td>{{i.Active}}</td>
             </tr>
             {% endfor %}
+            <!-- <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Total Confirmed</th>
+                <th scope="col">Total Death</th>
+                <th scope="col">Total Recovered</th>
+                <th scope="col">Daily Confirmed</th>
+                <th scope="col">Daily Deaths</th>
+                <th scope="col">Daily Recovered</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for i in respon|slice:"978:-11:-1" %}
+
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{i.dateymd}}</td>
+                <td>{{i.totalconfirmed}}</td>
+                <td>{{i.totaldeceased}}</td>
+                <td>{{i.totalrecovered}}</td>
+                <td>{{i.dailyconfirmed}}</td>
+                <td>{{i.dailydeceased}}</td>
+                <td>{{i.dailyrecovered}}</td>
+
+            </tr>
+            {% endfor %} -->
 
         </tbody>
     </table>

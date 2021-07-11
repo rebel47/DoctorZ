@@ -2,8 +2,8 @@
 from pathlib import Path
 import os
 from django.contrib import messages
-import django_heroku
-import dj_database_url
+# import django_heroku
+# import dj_database_url
 # from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -120,7 +120,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
@@ -129,10 +129,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "logickiddie@gmail.com"
-EMAIL_HOST_PASSWORD = 'Jugaad@Logic786'
+EMAIL_HOST_PASSWORD = 'Fake@12345'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
