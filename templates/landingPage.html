@@ -68,7 +68,7 @@
         max-width: 100%;
     }
     /* RESPONSIVE CSS
--------------------------------------------------- */
+------------------------------------------------- */
     
     @media (min-width: 40em) {
         .featurette-heading {
@@ -270,7 +270,11 @@
         </thead>
         <tbody>
 
+<<<<<<< HEAD
             {% for mein in response|slice:"524:-1" reversed %}
+=======
+            {% for mein in response|slice:"526:-1" reversed %}
+>>>>>>> 2721da8fafdd6ce149692e76848d39398010f96a
 
             <tr>
                 <!-- <th scope="row">{{forloop.counter}}</th> -->
@@ -289,8 +293,5 @@
 </marquee>
 <br><br><br>
 
-<!-- Live CoronaVirus Widget -->
-<!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script> -->
-<!-- <div class="elfsight-app-a14da8ea-7d02-4dcd-8500-f9337089f17a"></div> -->
 
 {% endblock body %}
