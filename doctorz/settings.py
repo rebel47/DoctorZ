@@ -148,7 +148,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "logickiddie@gmail.com"
-EMAIL_HOST_PASSWORD = 'Fake@12345'
+EMAIL_HOST_PASSWORD = 'Password'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
