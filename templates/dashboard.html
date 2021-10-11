@@ -40,7 +40,7 @@
                 <p class="card-text">{{service.description}}</p>
                 {% if user.is_authenticated %}
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Schedule</button> {% else %}
-                <b>Pleas Login to Schedule an Appointment</b> {% endif %}
+                <b>Please Login to Schedule an Appointment</b> {% endif %}
             </div>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
