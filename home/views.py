@@ -108,10 +108,10 @@ def service(request):
 
         message = "Dear, "+request.user.get_full_name()+"\n Thank you for chosing DoctorZ, \n We are pleased to inform you that your Appointment has been scheduled on "+str(appointmentDate)+" at "+ str(time)+".\n Your Description: "+ discription +" \n DoctorZ"
 
-        send_mail('Doctorz Appointment Scheduled', message, 'logickiddie@gmail.com', [request.user.email], fail_silently=False)
+        send_mail('Doctorz Appointment Scheduled', message, 'aayyaazz@rediffmail.com', [request.user.email], fail_silently=False)
 
         ownermessage = "A new DoctorZ appointment request has been booked by "+request.user.get_full_name()+" and scheduled to be delivered on "+str(appointmentDate)+" at "+ str(time)+".\n Patient Discription:"+ discription
-        send_mail('New Doctorz Appointment Booking', ownermessage, 'logickiddie@gmail.com', ['logickiddie@gmail.com'], fail_silently=False)
+        send_mail('New Doctorz Appointment Booking', ownermessage, 'aayyaazz@rediffmail.com', ['aayyaazz@rediffmail.com'], fail_silently=False)
 
 
         services = list(Service.objects.values().filter(user=request.user))
