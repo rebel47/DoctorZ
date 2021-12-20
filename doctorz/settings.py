@@ -148,7 +148,7 @@ EMAIL_HOST = 'smtp.rediffmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 25
 EMAIL_HOST_USER = "aayyaazz@rediffmail.com"
-EMAIL_HOST_PASSWORD = 'ayaz786786'
+EMAIL_HOST_PASSWORD = 'Fake@12345'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
