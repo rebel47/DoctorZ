@@ -102,7 +102,7 @@ def service(request):
         # serviceupdate.appointmentType = appointmentType
         serviceupdate.discription = discription
         serviceupdate.time = time
-#         serviceupdate.user = request.user
+        serviceupdate.user = request.user
         serviceupdate.name = name
         serviceupdate.save()
 
