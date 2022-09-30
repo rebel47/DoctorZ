@@ -21,3 +21,7 @@
 
 # Vaccine Slot Availability (only India)
 ![image](https://user-images.githubusercontent.com/48854533/156234964-ad65f695-556f-4aa6-aa1d-021617e816af.png)
+
+
+### This is my Project for College 
+P.S:- Hosted Link is not working anymore due to Azure account expiration.
