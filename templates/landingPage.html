@@ -253,13 +253,12 @@
 
 <div class="carouselHeading servicehead">Live Corona Case</div>
 
-<marquee behavior="scroll" direction="left">
+<!-- <marquee behavior="scroll" direction="left">
     <table class=" form table table-bordered">
         {%csrf_token%}
 
         <thead>
             <tr>
-                <!-- <th scope="col">#</th> -->
                 <th scope="col">Country</th>
                 <th scope="col">Total Confirmed</th>
                 <th scope="col">Death</th>
@@ -273,7 +272,6 @@
             {% for mein in response|slice:"1062:-1" reversed %}
 
             <tr>
-                <!-- <th scope="row">{{forloop.counter}}</th> -->
                 <td>{{mein.Country}}</td>
                 <td>{{mein.Confirmed}}</td>
                 <td>{{mein.Deaths}}</td>
@@ -281,7 +279,7 @@
                 <td>{{mein.Active}}</td>
                 <td>{{mein.Date}}</td>
             </tr>
-            {% endfor %}
+            {% endfor %} -->
 
         </tbody>
     </table>
