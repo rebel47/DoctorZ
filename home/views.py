@@ -11,7 +11,9 @@ import json
 
 # Create your views here.
 def index(request):
-    response=requests.get('https://api.covid19api.com/total/dayone/country/india').json()
+    
+    try:
+        response=requests.get('https://api.covid19api.com/total/dayone/country/india').json()
     # url = "https://corona-virus-world-and-india-data.p.rapidapi.com/api_india_timeline"
 
     # headers = {
@@ -21,7 +23,9 @@ def index(request):
 
     # response = requests.request("GET", url, headers=headers).json()
 
-    return render(request, 'landingPage.html', {'response':response})
+        return render(request, 'landingPage.html', {'response':response})
+    except:
+        return render(request, 'landingPage.html')
 
 def dashboard(request):
     if request.method == 'GET':
@@ -70,16 +74,19 @@ def vaccine(request):
 #     return render(request, 'vaccine_data.html',{'vaccinedata':vaccinedata})
     
 def covid(request):
-    response=requests.get('https://api.covid19api.com/total/dayone/country/india').json()
-    # url = "https://corona-virus-world-and-india-data.p.rapidapi.com/api_india_timeline"
+    try:
+        response=requests.get('https://api.covid19api.com/total/dayone/country/india').json()
+        # url = "https://corona-virus-world-and-india-data.p.rapidapi.com/api_india_timeline"
 
-    # headers = {
-    #     'x-rapidapi-key': "3b73f69c98msh63f861f599d3f0fp18a3d6jsn6262635c444f",
-    #     'x-rapidapi-host': "corona-virus-world-and-india-data.p.rapidapi.com"
-    #      }
+        # headers = {
+        #     'x-rapidapi-key': "3b73f69c98msh63f861f599d3f0fp18a3d6jsn6262635c444f",
+        #     'x-rapidapi-host': "corona-virus-world-and-india-data.p.rapidapi.com"
+        #      }
 
-    # respon = requests.request("GET", url, headers=headers).json()
-    return render(request, 'index.html', {'response':response})
+        # respon = requests.request("GET", url, headers=headers).json()
+        return render(request, 'index.html', {'response':response})
+    except:
+        return render(request, 'index.html')
 
 def service(request):
     
